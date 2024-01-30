@@ -6,7 +6,9 @@ import Pagination from './Pagination';
 function App() {
 
   const [empData, setEmpData] = useState([]);
+  const [currentPage, setCurrentPage ] = useState(1);
   const [paginatedData, setPaginatedData] = useState([]);
+  let dataLimit = 10;
 
   const fetchData = async () => {
 
@@ -19,9 +21,20 @@ function App() {
 
   }
 
-  useEffect(() => {
+  const getPaginatedData = () => {
+    const startIndex = currentPage * dataLimit - dataLimit;
+    // console.log("start",startIndex)
+    const endIndex = startIndex + dataLimit;
+    // console.log("end",endIndex)
+    setPaginatedData(empData.slice(startIndex, endIndex));
+}
 
-    fetchData();    
+  useEffect(() => {
+    getPaginatedData()
+},[currentPage, empData])
+
+  useEffect(() => {
+    fetchData();      
   },[]);
   return (
     <>
@@ -49,7 +62,7 @@ function App() {
         })}
         </tbody>
       </table>
-      <Pagination empData={empData} setPaginatedData={setPaginatedData} dataLimit={10} pageLimit={5}/>
+      <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} pageLimit={5}/>
     </>
   )
 }
