@@ -1,0 +1,60 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+table{
+  text-align: justify;
+  border-collapse: collapse;
+
+}
+tr{
+  border-bottom: 1px solid #b5b5b5;
+}
+thead{
+  background-color: rgb(87, 175, 0);
+  width: 90%;
+  
+}
+
+tbody{
+  background-color: rgb(202, 202, 202);
+  color: rgb(62, 62, 62);
+  width: 90%;
+  padding: 20px;
+}
+
+.id{
+  width: 200px;
+  padding: 20px;
+}
+
+.name{
+  width: 400px;
+  padding: 20px;
+}
+
+.email{
+  width: 500px;
+  padding: 20px;
+}
+
+.role{
+  width: 200px;
+  padding: 20px;
+}
+
+.pagination{
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.pageNo{
+  background-color: rgb(87, 175, 0);
+  padding: 20px;
+  border-radius: 6px
+}
