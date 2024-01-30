@@ -16,7 +16,7 @@ function App() {
     const data = await axios.get(`https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json`);
     setEmpData(data.data);
    } catch (error) {
-    console.log(error)
+    console.log(error.message)
    }
 
   }
