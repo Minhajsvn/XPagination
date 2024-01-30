@@ -13,7 +13,7 @@ function App() {
   const fetchData = async () => {
 
    try {
-    const data = await axios.get(`ttps://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json`);
+    const data = await axios.get(`https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json`);
     setEmpData(data.data);
    } catch (error) {
     alert(error.message);
